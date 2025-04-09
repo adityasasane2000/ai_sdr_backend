@@ -19,7 +19,7 @@ app = FastAPI(title="AI SDR Platform API")
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, set to frontend domain
+    allow_origins=["https://ai-sdr-frontend.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
