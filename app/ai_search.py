@@ -12,7 +12,7 @@ import random
 
 # Configure API keys
 genai.configure(api_key="AIzaSyAyrlxTyIIWzk97zTBtaZAf6nr7naoyFVY")
-SERPAPI_KEY = os.getenv("SERPAPI_KEY", "fdf46e3b3848b7182af27b84f4c0c24e35e7a6936ca95fda2c2050fff3962208")  # Replace with your actual key
+SERPAPI_KEY = os.getenv("SERPAPI_KEY", "c74d6bff896314d1433382b5702a9e7fbb542f859877b040495c9529ac6ace42")  # Replace with your actual key
 
 class SearchQuery(BaseModel):
     query: str
