@@ -36,21 +36,6 @@ app.include_router(prospects.router, prefix="/prospects", tags=["Prospects"])
 def read_root():
     return {"message": "Welcome to AI SDR Platform API"}
 
-# Serve React frontend (after build)
-frontend_build_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../frontend/build"))
-static_dir = os.path.join(frontend_build_path, "static")
-
-# Serve static files (JS/CSS etc.)
-app.mount("/static", StaticFiles(directory=static_dir), name="static")
-
-# Catch-all route to serve index.html
-@app.get("/{full_path:path}")
-def serve_react_app(full_path: str):
-    index_path = os.path.join(frontend_build_path, "index.html")
-    if os.path.exists(index_path):
-        return FileResponse(index_path)
-    return {"error": "React build not found. Did you run npm run build?"}
-
 # Run locally
 if __name__ == "__main__":
     import uvicorn
