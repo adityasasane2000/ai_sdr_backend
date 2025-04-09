@@ -26,13 +26,13 @@ app.add_middleware(
 )
 
 # Include routers
-app.include_router(auth_router, prefix="/api/auth", tags=["Authentication"])
-app.include_router(users.router, prefix="/api/users", tags=["Users"])
-app.include_router(channels.router, prefix="/api/channels", tags=["Channels"])
-app.include_router(prospects.router, prefix="/api/prospects", tags=["Prospects"])
+app.include_router(auth_router, prefix="/auth", tags=["Authentication"])
+app.include_router(users.router, prefix="/users", tags=["Users"])
+app.include_router(channels.router, prefix="/channels", tags=["Channels"])
+app.include_router(prospects.router, prefix="/prospects", tags=["Prospects"])
 
 # Simple API check
-@app.get("/api")
+@app.get("/")
 def read_root():
     return {"message": "Welcome to AI SDR Platform API"}
 
